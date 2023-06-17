@@ -1,0 +1,31 @@
+<nav aria-label="Page navigation example" class="text-center">
+  <ul class="pagination d-flex justify-content-center">
+    <li class="page-item">
+      <a class="page-link" th:href="@{/members(page=1, size=${pagination.pageSize})}" aria-label="Previous">
+        <span aria-hidden="true">처음</span>
+      </a>
+    </li>
+    <li class="page-item">
+      <a class="page-link" th:href="@{/members(page=${pagination.prevBlock}, size=${pagination.pageSize})}" aria-label="Previous">
+        <span aria-hidden="true">이전</span>
+      </a>
+    </li>
+    <th:block  th:with="start = ${pagination.startPage}, end = ${pagination.endPage}">
+      <li class="page-item"
+          th:with="start = ${pagination.startPage}, end = ${pagination.endPage}"
+          th:each="pageButton : ${#numbers.sequence(start, end)}">
+        <a class="page-link" th:href="@{/members(page=${pageButton}, size=${pagination.pageSize})}" th:text="${pageButton}"></a>
+      </li>
+    </th:block>
+    <li class="page-item">
+      <a class="page-link" th:href="@{/members(page=${pagination.nextBlock}, size=${pagination.pageSize})}" aria-label="Next">
+        <span aria-hidden="true">다음</span>
+      </a>
+    </li>
+    <li class="page-item">
+      <a class="page-link" th:href="@{/members(page=${pagination.totalPageCnt}, size=${pagination.pageSize})}" aria-label="Previous">
+        <span aria-hidden="true">끝</span>
+      </a>
+    </li>
+  </ul>
+</nav>
