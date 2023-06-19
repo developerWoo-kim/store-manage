@@ -41,8 +41,6 @@ public class MemberApiController {
      * - API 요청 스펙에 맞추어 별도의 DTO를 파라미터로 받는다.
      *
      *
-     *
-     *
      */
     @PostMapping("/api/v1/members")
     public MemberApiResponse<String> saveMemberV2(@RequestBody @Valid MemberSignUpDto memberDto) {
