@@ -42,6 +42,7 @@ public class MemberApiController {
      *
      *
      *
+     *
      */
     @PostMapping("/api/v1/members")
     public MemberApiResponse<String> saveMemberV2(@RequestBody @Valid MemberSignUpDto memberDto) {
