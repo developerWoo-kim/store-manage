@@ -1,4 +1,3 @@
 FROM openjdk:11
-ARG JAR_FILE=*.jar
-COPY ${JAR_FILE} store-manager.jar
+COPY ~/workspace/store-manager/build/libs/*.jar store-manager.jar
 ENTRYPOINT ["java","-jar", "/store-manager.jar"]
