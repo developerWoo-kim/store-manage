@@ -1,3 +1,4 @@
 FROM openjdk:11
-COPY /var/jenkins_home/workspace/store-manager/build/libs/*.jar store-manager.jar
+ARG JAR_FILE=*.jar
+COPY ${JAR_FILE} store-manager.jar
 ENTRYPOINT ["java","-jar", "/store-manager.jar"]
